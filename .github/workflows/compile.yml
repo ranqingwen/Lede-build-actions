@@ -91,6 +91,7 @@ jobs:
       run: |
         cd openwrt
         make download -j8
+        
     
     - name: 开始编译固件
       id: compile
