@@ -91,25 +91,13 @@ jobs:
       run: |
         cd openwrt
         make download -j8
-        
-    
+
     - name: 开始编译固件
       id: compile
       if: steps.package.outcome == 'success'
       run: |
         cd openwrt
-        # 强制禁用导致报错的内核驱动 (修复 ssb 缺失 fallback-sprom.h 问题)
-        if [ -f ".config" ]; then
-          sed -i 's/CONFIG_SSB=y/CONFIG_SSB=n/g' .config
-          sed -i 's/CONFIG_SSB_SDIOHOST=y/n/g' .config
-          echo "CONFIG_SSB=n" >> .config
-          echo "CONFIG_SSB_SDIOHOST=n" >> .config
-          # 刷新配置以确保修改生效
-          make defconfig > /dev/null 2>&1
-        fi
-        
         echo -e "$(nproc) thread compile"
-        # 执行编译：如果多线程失败，自动切换单线程并打印详细错误日志
         make -j$(nproc) || make -j1 V=s
 
     - name: 自动打包armsr_rootfs_tar_gz
