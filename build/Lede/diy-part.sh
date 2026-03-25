@@ -47,9 +47,6 @@ export AdGuardHome_Core="0"                  # 编译固件时自动增加AdGuar
 # 增加应用过滤插件
 export Install_OAF="1"                       # 是否安装应用过滤(OAF)插件 (1为安装, 0为不安装)
 
-# 增加MosDNS插件
-export Install_MosDNS="1"                    # 是否安装MosDNS插件 (1为安装, 0为不安装)
-
 # 开启NTFS格式盘挂载
 export Automatic_Mount_Settings="1"          # 编译时加入开启NTFS格式盘挂载的所需依赖(1为启用命令,填0为不作修改)
 
