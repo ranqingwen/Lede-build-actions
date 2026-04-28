@@ -50,10 +50,6 @@ export OpenClash_branch="1"                  # OpenClash的源码分别有【mas
 export Clash_Core="1"                        # 是否下载 Clash 内核和 GeoIP/GeoSite (1为启用, 0为关闭)
 export Clash_Arch="amd64"                    # 内核架构 (例如: amd64, armv8, armv7, mipsle 等)
 
-# OAF 应用过滤增强设置
-export Fix_Oafd_Log="1"                      # 修复 oafd 日志刷屏 (1为启用, 0为关闭)
-export Update_OAF="1"                        # 使用 destan19 原版 OAF 库 (1为启用, 0为关闭)
-
 # 开启NTFS格式盘挂载
 export Automatic_Mount_Settings="1"          # 编译时加入开启NTFS格式盘挂载的所需依赖(1为启用命令,填0为不作修改)
 
